@@ -7,6 +7,12 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [activeTodos, setActiveTodos] = useState("all");
 
+  // Удаление всех выполненных "todo"
+  function deleteAllCompletedTodo() {
+    const newTodos = todos.filter(value => !value.completed);
+    setTodos(newTodos);
+  }
+
   // Создание "todo" при нажатии "Enter"
   function addTodoHotKey(key) {
     if (newTodo.length === 0 || key !== "Enter") return; // Если поле пусто или была нажат не "Enter", то функция не выполняется
@@ -161,7 +167,12 @@ function App() {
             Выполненные
           </label>
         </div>
-        <button className="clear-completed">Удалить выполненные</button>
+        <button
+          className="clear-completed"
+          onClick={() => deleteAllCompletedTodo()}
+        >
+          Удалить выполненные
+        </button>
       </div>
     </div>
   );
