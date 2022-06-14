@@ -1,11 +1,89 @@
+button,
+label {
+  cursor: pointer;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+
+  input[type="text"] {
+    border-width: 0 0 1px 0;
+    border-color: black;
+    border-style: solid;
+    width: 70%;
+    font-size: 32px;
+    background: transparent;
+    outline: none;
+    margin: 50px 0 10px 0;
+  }
+}
+
+.actives {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+  border: 1px solid gray;
+
+  p {
+    min-width: 200px;
+    margin-left: 10px;
+  }
+
+  .todo-actives {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    input[type="radio"] {
+      display: none;
+
+      & + label {
+        margin: 0 10px;
+        padding: 5px;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  .checked {
+    border: 1px solid black;
+  }
+
+  .clear-completed {
+    margin-right: 10px;
+    background: none;
+    outline: none;
+    border: none;
+  }
+}
+
 .todo {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  width: 70%;
+  border: 1px solid gray;
+
+  .checkbox-title {
+    display: flex;
+    align-items: center;
+    max-width: 90%;
+    min-width: 50%;
+
+    label {
+      margin: 0 25px;
+      min-width: 40px;
+    }
+  }
 
   p {
     font-size: 32px;
     color: black;
+    overflow-x: auto;
   }
 
   input[type="checkbox"] {
@@ -21,7 +99,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      cursor: pointer;
 
       &:hover {
         border-color: silver;
@@ -39,6 +116,20 @@
         display: block;
       }
     }
+  }
+
+  button {
+    border: none;
+    outline: none;
+    background: none;
+    color: darkred;
+
+    &:hover {
+      color: red;
+    }
+
+    font-size: 60px;
+    margin: 0 25px;
   }
 }
 
