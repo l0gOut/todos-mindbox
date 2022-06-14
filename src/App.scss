@@ -1,0 +1,50 @@
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    font-size: 32px;
+    color: black;
+  }
+
+  input[type="checkbox"] {
+    display: none;
+
+    & + label {
+      border-width: 1px;
+      border-style: solid;
+      border-color: gray;
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      &:hover {
+        border-color: silver;
+      }
+
+      h1 {
+        display: none;
+        color: green;
+      }
+    }
+
+    & + .checked {
+      border-color: green;
+      h1 {
+        display: block;
+      }
+    }
+  }
+}
+
+.todo.completed {
+  p {
+    text-decoration: line-through;
+    color: gray;
+  }
+}
